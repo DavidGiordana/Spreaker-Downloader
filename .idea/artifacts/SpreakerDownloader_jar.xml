@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SpreakerDownloader:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SpreakerDownloader_jar</output-path>
+    <root id="archive" name="SpreakerDownloader.jar">
+      <element id="module-output" name="SpreakerDownloader" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/directory/studio/org.apache.commons.io/2.0.1/org.apache.commons.io-2.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.0.1/commons-io-2.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/findbugs/annotations/1.0.0/annotations-1.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/json/json/20170516/json-20170516.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
