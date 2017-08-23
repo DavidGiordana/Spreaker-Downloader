@@ -1,15 +1,11 @@
 package org.davidgiordana.SpreakerDownloader.GUI.SpreakerDownloader;
 
-import javafx.application.Platform;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.CheckBoxListCell;
-import javafx.util.Callback;
+import javafx.scene.control.cell.CheckBoxTableCell;
 import org.davidgiordana.SpreakerDownloader.Data.Downloader.DownloadManager;
 import org.davidgiordana.SpreakerDownloader.Data.SpreakerData.SpreakerEpisode;
 import org.davidgiordana.SpreakerDownloader.Data.SpreakerData.SpreakerPodcast;
@@ -27,6 +23,8 @@ import java.util.ResourceBundle;
  */
 public class SpreakerDownloaderController implements Initializable{
 
+    // MARK: - Podcast label
+
     @FXML
     /** Label con el nombre del podcast */
     public Label podcastLabel;
@@ -34,6 +32,13 @@ public class SpreakerDownloaderController implements Initializable{
     @FXML
     /** Label con el nombre del podcast */
     public Label podcastName;
+
+    // MARK: -  Search
+
+    /** Text Field de búsqueda */
+    public TextField searchTF;
+
+
 
     @FXML
     /** Label con el nombre del item que se está descargando */
@@ -48,8 +53,8 @@ public class SpreakerDownloaderController implements Initializable{
     public Label remaning;
 
     @FXML
-    /** Vista de lista con los elementos descargables */
-    public ListView downloadList;
+    /** Vista de tabla con los elementos descargables */
+    public TableView<SpreakerEpisode> episodesTable;
 
     @FXML
     /** Selector de ancho de banda */
@@ -76,7 +81,7 @@ public class SpreakerDownloaderController implements Initializable{
     private boolean isAllSelected() {
         int count = this.downloadDataList.size();
         int selected = 0;
-        for (CheckboxListItem<SpreakerEpisode> i: this.downloadDataList) {
+        for (SpreakerEpisode i: this.podcastModel.get().getFilteredEpisodesList()) {
             if (i.selectedProperty().getValue()) {
                 selected += 1;
             }
@@ -111,14 +116,14 @@ public class SpreakerDownloaderController implements Initializable{
     @FXML
     /** Método llamado al presionar el boton limpiar selecciones */
     public void clearSelection() {
-        for (CheckboxListItem<SpreakerEpisode> i: this.downloadDataList) {
+        for (SpreakerEpisode i: this.podcastModel.get().getFilteredEpisodesList()) {
             i.selectedProperty().setValue(false);
         }
     }
 
     /** Método llamado al seleccionar todo */
     public void applySelectAll() {
-        for (CheckboxListItem<SpreakerEpisode> i: this.downloadDataList) {
+        for (SpreakerEpisode i: this.podcastModel.get().getFilteredEpisodesList()) {
             i.selectedProperty().setValue(true);
         }
     }
@@ -139,22 +144,43 @@ public class SpreakerDownloaderController implements Initializable{
         DownloadManager.getInstance().addDownloads(list);
     }
 
+
+    // MARK: - Data
+
     /** Identificador de Show actual */
     public static int showID;
 
-    /** Propiedad que almacena la información del podcast */
-    private ObjectProperty<SpreakerPodcast> podcast = new SimpleObjectProperty<>(null);
+    private SimpleObjectProperty<SpreakerPodcast> podcastModel;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         podcastLabel.setText("Cargando...");
 
-        // Parapara la lista de descargas
-        this.prepareDownloadList();
+        // Parapara la tabla de episodios
+        TableColumn<SpreakerEpisode, Boolean> checkboxColumn = new TableColumn("");
+        checkboxColumn.setCellValueFactory(c -> {return c.getValue().selectedProperty();});
+        checkboxColumn.setCellFactory(CheckBoxTableCell.forTableColumn(checkboxColumn));
+
+        TableColumn<SpreakerEpisode, String> titleColumn = new TableColumn("Título");
+        titleColumn.setCellValueFactory(c -> {return c.getValue().titleProperty();});
+
+        episodesTable.getColumns().setAll(checkboxColumn, titleColumn);
 
         // Solicita la información del podcast
-        podcast.addListener((obs,o, n)-> loadData(n));
-        this.getPodcastData();
+        podcastModel = new SimpleObjectProperty<>();
+        podcastModel.addListener((obs, o, n) -> {
+            if (n != null) {
+                podcastLabel.setText("Podcast");
+                podcastName.setText(n.getShowName());
+                episodesTable.setItems(n.getFilteredEpisodesList());
+            } else {
+                System.out.println("es null");
+            }
+        });
+        SpreakerPodcastFactory.setPodcast(showID, podcastModel);
+
+        titleColumn.prefWidthProperty().bind(episodesTable.widthProperty().multiply(0.9));
 
         // Enlaza la barra de progreso
         DownloadManager dm = DownloadManager.getInstance();
@@ -167,53 +193,13 @@ public class SpreakerDownloaderController implements Initializable{
         // Enlaza el elemento actual
         dm.currentItemProperty().addListener((obs,o,n)-> updateCurrentDownloadingItem(n));
         this.updateCurrentDownloadingItem(dm.getCurrentItem());
+
+        searchTF.textProperty().addListener((obs, o, n) -> podcastModel.get().search(n));
     }
 
     /** Lista observable para modelo de lista de descargas */
     private ObservableList<CheckboxListItem> downloadDataList;
 
-    /**
-     * Prepara la lista de descargas (inicialización)
-     */
-    private void prepareDownloadList() {
-        this.downloadDataList = FXCollections.observableArrayList();
-        downloadList.setItems(downloadDataList);
-        Callback<ListView<CheckboxListItem>, ListCell<CheckboxListItem>> forListView =
-                CheckBoxListCell.forListView(item -> {return item.selectedProperty();});
-        downloadList.setCellFactory(forListView);
-    }
-
-    /**
-     * Carga información a la lista de descargas
-     * @param data Lista de episodios a cargar
-     */
-    private void loadDataInDownloadList(ArrayList<SpreakerEpisode> data){
-        for (int i = 0; i < data.size(); i++) {
-            final int index = i;
-            SpreakerEpisode element = data.get(i);
-            CheckboxListItem item = new CheckboxListItem(element);
-            downloadDataList.add(item);
-            item.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
-                selectAllCB.setSelected(isAllSelected());
-            });
-        }
-
-
-    }
-
-    /**
-     * Procesa el podcast para mostrar la información en pantalla
-     **/
-    private void loadData(SpreakerPodcast pod) {
-        Platform.runLater(new Runnable(){
-            @Override
-            public void run() {
-                podcastLabel.setText("Podcast");
-                podcastName.setText(pod.getShowName());
-                loadDataInDownloadList(pod.getEpisodes());
-            }
-        });
-    }
 
     /**
      * Actualiza el episodio actual (GUI)
@@ -239,23 +225,15 @@ public class SpreakerDownloaderController implements Initializable{
         this.remaning.setText(t);
     }
 
-    /**
-     * Solicita la información del podcast
-     * Advertencia: es asíncrono
-     *
-     */
-    public void getPodcastData(){
-        new Thread() {
-            @Override
-            public void run() {
-                super.run();
-                SpreakerPodcast temp = SpreakerPodcastFactory.getPodcast(showID);
-                if (temp != null) {
-                    podcast.setValue(temp);
-                }
-            }
-        }.start();
+
+    public void searchAction(){
+
     }
+
+    public void cancelSearchAction(){
+        searchTF.setText(null);
+    }
+
 }
 
 

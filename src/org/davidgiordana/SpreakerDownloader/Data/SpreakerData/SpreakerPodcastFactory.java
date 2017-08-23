@@ -1,5 +1,8 @@
 package org.davidgiordana.SpreakerDownloader.Data.SpreakerData;
 
+import javafx.application.Platform;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ObservableObjectValue;
 import org.davidgiordana.SpreakerDownloader.Data.JSONHelper;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,6 +62,20 @@ public class SpreakerPodcastFactory {
             episodes = getEpisodes(showID);
         } catch (JSONException e){e.printStackTrace();}
         return new SpreakerPodcast(showID, userName, showName, episodes);
+    }
+
+    /**
+     * Obtiene un podcast
+     * @param showID Identificador del show a obtener
+     * @param podcastContainer Contenedor para almacenar el objecto del podcast
+     */
+    public static void setPodcast(int showID, SimpleObjectProperty<SpreakerPodcast> podcastContainer) {
+        new Thread(() -> {
+            final SpreakerPodcast podcast = getPodcast(showID);
+            Platform.runLater(() -> {
+                podcastContainer.setValue(podcast);
+            });
+        }).start();
     }
 
     /**

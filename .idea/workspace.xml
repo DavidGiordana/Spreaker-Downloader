@@ -99,7 +99,7 @@
       <file leaf-file-name="InitViewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/InitView/InitViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
+            <state relative-caret-position="0">
               <caret line="28" column="77" lean-forward="false" selection-start-line="28" selection-start-column="77" selection-end-line="28" selection-end-column="77" />
               <folding />
             </state>
@@ -109,22 +109,38 @@
       <file leaf-file-name="SpreakerDownloaderController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="210" column="45" lean-forward="false" selection-start-line="210" selection-start-column="45" selection-end-line="210" selection-end-column="45" />
+            <state relative-caret-position="2587">
+              <caret line="125" column="79" lean-forward="false" selection-start-line="125" selection-start-column="79" selection-end-line="125" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#changeBandwidth#0;class#SpreakerDownloaderController#0" expanded="false" />
                 <element signature="method#downloadSelection#0;class#SpreakerDownloaderController#0" expanded="false" />
+                <element signature="e#7321#7322#0" expanded="true" />
+                <element signature="e#7359#7360#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckBoxListCell.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/cell/CheckBoxListCell.java">
+      <file leaf-file-name="SpreakerPodcast.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcast.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1885">
-              <caret line="98" column="57" lean-forward="false" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
+            <state relative-caret-position="507">
+              <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3207#3208#0" expanded="true" />
+                <element signature="e#3250#3251#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpreakerEpisode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerEpisode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-536">
+              <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -132,14 +148,30 @@
       </file>
       <file leaf-file-name="SpreakerDownloaderMain.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderMain.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="747">
+              <caret line="44" column="21" lean-forward="false" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+              <folding>
+                <marker date="1503528436000" expanded="true" signature="2385:2503" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="2385:2697" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="2526:2573" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="2592:2683" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="2710:4154" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="2730:4140" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="2806:3107" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="2832:2959" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="2984:3087" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="3164:3503" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="3190:3355" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="3380:3483" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="3579:4119" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="3605:3971" ph="..." />
+                <marker date="1503528436000" expanded="true" signature="3996:4099" ph="..." />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -162,7 +194,6 @@
       <find>si</find>
       <find>System</find>
       <find>CheckboxList</find>
-      <find>list</find>
       <find>fx:id</find>
       <find>onAc</find>
       <find>processValue</find>
@@ -170,6 +201,7 @@
       <find>checkInformation</find>
       <find>print</find>
       <find>cb</find>
+      <find>list</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -227,14 +259,17 @@
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/LimitedBandwidthInputStream.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadTask.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadManager.java" />
-        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcastFactory.java" />
-        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcast.java" />
-        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerEpisode.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Main.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/CheckboxList/CheckboxListItem.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/CheckboxList/CheckboxList.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/InitView/InitViewController.java" />
+        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/PodcastsModel.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderMain.fxml" />
+        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/EpisodeModel.java" />
+        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/EpisodesModel.java" />
+        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcastFactory.java" />
+        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerEpisode.java" />
+        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcast.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderController.java" />
       </list>
     </option>
@@ -523,11 +558,54 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="ProjectPane" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SpreakerDownloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpreakerDownloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpreakerDownloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpreakerDownloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpreakerDownloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpreakerDownloader" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -837,21 +915,25 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278272" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3278272" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.180625" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.180625" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955715" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29866117" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -861,14 +943,10 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29866117" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282636" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282636" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955715" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -892,13 +970,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/concurrent/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="980" column="50" lean-forward="false" selection-start-line="980" selection-start-column="50" selection-end-line="980" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/beans/InvalidationListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10">
@@ -999,13 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/TableColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-538">
-          <caret line="235" column="11" lean-forward="false" selection-start-line="235" selection-start-column="11" selection-end-line="235" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/CheckBoxBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -1022,13 +1086,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/Main/CheckBoxListCellDemo.java" />
     <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/GUI/AvailabeDownloadList.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/collections/ObservableList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="50" column="46" lean-forward="false" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/com/sun/javafx/binding/ExpressionHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1096,13 +1153,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/InitView/InitViewController.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/JSONHelper.java">
@@ -1133,27 +1190,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcastFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-398">
-          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerEpisode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/CheckboxList/CheckboxListItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-87">
@@ -1170,7 +1206,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/InitView/InitViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="0">
           <caret line="28" column="77" lean-forward="false" selection-start-line="28" selection-start-column="77" selection-end-line="28" selection-end-column="77" />
           <folding />
         </state>
@@ -1190,33 +1226,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderMain.fxml">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/cell/CheckBoxListCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="38" />
+        <state relative-caret-position="650">
+          <caret line="98" column="57" lean-forward="false" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/collections/ObservableList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="72" column="19" lean-forward="false" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/TableColumn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="704" column="17" lean-forward="false" selection-start-line="704" selection-start-column="17" selection-end-line="704" selection-end-column="17" />
+          <folding>
+            <element signature="e#28491#28492#0" expanded="false" />
+            <element signature="e#28527#28528#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcastFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-697">
+          <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+          <folding>
+            <element signature="e#2075#2092#0" expanded="true" />
+            <element signature="e#3796#3813#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderMain.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/cell/CheckBoxListCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1885">
-          <caret line="98" column="57" lean-forward="false" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
+        <state relative-caret-position="747">
+          <caret line="44" column="21" lean-forward="false" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+          <folding>
+            <marker date="1503528436000" expanded="true" signature="2385:2503" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="2385:2697" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="2526:2573" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="2592:2683" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="2710:4154" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="2730:4140" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="2806:3107" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="2832:2959" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="2984:3087" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="3164:3503" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="3190:3355" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="3380:3483" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="3579:4119" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="3605:3971" ph="..." />
+            <marker date="1503528436000" expanded="true" signature="3996:4099" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/EpisodesModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="51" column="4" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerEpisode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-536">
+          <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3207#3208#0" expanded="true" />
+            <element signature="e#3250#3251#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="210" column="45" lean-forward="false" selection-start-line="210" selection-start-column="45" selection-end-line="210" selection-end-column="45" />
+        <state relative-caret-position="2587">
+          <caret line="125" column="79" lean-forward="false" selection-start-line="125" selection-start-column="79" selection-end-line="125" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#changeBandwidth#0;class#SpreakerDownloaderController#0" expanded="false" />
             <element signature="method#downloadSelection#0;class#SpreakerDownloaderController#0" expanded="false" />
+            <element signature="e#7321#7322#0" expanded="true" />
+            <element signature="e#7359#7360#0" expanded="true" />
           </folding>
         </state>
       </provider>

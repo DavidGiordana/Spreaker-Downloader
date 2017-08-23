@@ -1,5 +1,8 @@
 package org.davidgiordana.SpreakerDownloader.Data.SpreakerData;
 
+import javafx.beans.property.*;
+
+
 /**
  * Objeto con la información de un episodio
  *
@@ -8,10 +11,26 @@ package org.davidgiordana.SpreakerDownloader.Data.SpreakerData;
 public class SpreakerEpisode  {
 
     /** Título */
-    private String title;
+    private StringProperty title;
 
     /** Identificador de episodio */
-    private int episodeID;
+    private IntegerProperty episodeID;
+
+    /** Indica que el episodio está seleccionado */
+    private BooleanProperty selected;
+
+
+    /**
+     * Constructor
+     * @param title título del episodio
+     * @param id id del episodio
+     * @param selected Indica que un episodio está seleccionado
+     */
+    public SpreakerEpisode (String title, int id, boolean selected) {
+        this.title = new SimpleStringProperty(title);
+        this.episodeID = new SimpleIntegerProperty(id);
+        this.selected = new SimpleBooleanProperty(selected);
+    }
 
     /**
      * Constructor
@@ -19,8 +38,7 @@ public class SpreakerEpisode  {
      * @param id id del episodio
      */
     public SpreakerEpisode (String title, int id) {
-        this.title = title;
-        this.episodeID = id;
+        this(title,id,false);
     }
 
     /**
@@ -28,23 +46,31 @@ public class SpreakerEpisode  {
      */
 
     public String getTitle() {
+        return title.get();
+    }
+
+    public StringProperty titleProperty() {
         return title;
     }
 
     public int getEpisodeID() {
+        return episodeID.get();
+    }
+
+    public IntegerProperty episodeIDProperty() {
         return episodeID;
+    }
+
+    public boolean isSelected() {
+        return selected.get();
+    }
+
+    public BooleanProperty selectedProperty() {
+        return selected;
     }
 
     public String getDownloadUrl() {
         return "https://api.spreaker.com/v2/episodes/" + episodeID + "/download";
     }
 
-    /**
-     * Overwrite
-     */
-
-    @Override
-    public String toString(){
-        return this.getTitle();
-    }
 }
