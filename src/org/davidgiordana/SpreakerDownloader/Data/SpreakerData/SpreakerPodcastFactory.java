@@ -119,4 +119,20 @@ public class SpreakerPodcastFactory {
     }
 
 
+
+
+/*
+    public static Integer getSpreakerShowFromUrl(String url) {
+        String f1 = "http://www.spreaker.com/show/";
+        String f2 = "/episodes/feed";
+        if (text.startsWith(f1) && text.endsWith(f2)) {
+            text = text.replaceFirst(f1, "");
+            text = text.replaceFirst(f2, "");
+        }
+        try {
+            return Integer.parseInt(text);
+        } catch (Exception e) {return null;}
+    }
+
+*/
 }

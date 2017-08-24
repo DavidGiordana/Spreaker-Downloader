@@ -18,7 +18,7 @@ public class JSONHelper {
      * @param url Ruta del sitio a solicitar su contenido
      * @return String con el contenido de la URL. null si ocurre algún problema
      */
-    private static String getText(String url) {
+    public static String getText(String url) {
         BufferedReader in = null;
         String inputLine;
         String content = "";

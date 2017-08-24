@@ -70,7 +70,10 @@ public class SpreakerEpisode  {
     }
 
     public String getDownloadUrl() {
-        return "https://api.spreaker.com/v2/episodes/" + episodeID + "/download";
+        return "https://api.spreaker.com/v2/episodes/" + getEpisodeID() + "/download";
     }
 
+    public void setSelected(boolean selected) {
+        this.selected.set(selected);
+    }
 }
