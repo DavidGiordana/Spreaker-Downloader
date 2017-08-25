@@ -9,6 +9,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Crea una instancia de SpreakerPodcast
@@ -118,21 +120,60 @@ public class SpreakerPodcastFactory {
         return episodes;
     }
 
+    // MARK: - get Spreaker show id
 
+    /**
+     * Retorna el identificador de un show de Spreaker si es posible
+     * en base a un texto pasado como argumento.
+     * @param text Texto a procesar
+     * @return Show ID de Spreaker, null si no es posible obtener el dato
+     */
+    public static Integer getSpreakerShowID(String text) {
+        // Elimina caso base
+        if (text == null || text.isEmpty()) {
+            return null;
+        }
+        text = text.trim();
+        // Intenta obtener el id directamente del texto
+        try {
+            Integer id = Integer.parseInt(text);
+            boolean isValid = JSONHelper.getJSON("https://api.spreaker.com/v2/shows/" + id) != null;
+            return isValid ? id : null;
+        } catch (Exception e) {}
+        return getSpreakerShowIDFromUrl(text);
+    }
 
-
-/*
-    public static Integer getSpreakerShowFromUrl(String url) {
-        String f1 = "http://www.spreaker.com/show/";
-        String f2 = "/episodes/feed";
-        if (text.startsWith(f1) && text.endsWith(f2)) {
-            text = text.replaceFirst(f1, "");
-            text = text.replaceFirst(f2, "");
+    /**
+     * Intenta obtener el id de un show de spreaker dada una url
+     * @param url Enlace al sitio de Spreaker
+     * @return Show ID de Spreaker, null en caso de no poder obtener la informacíon
+     */
+    private static Integer getSpreakerShowIDFromUrl(String url) {
+        String id = null;
+        // Intenta obtener el id desde la url
+        Pattern p = Pattern.compile("(?<=spreaker.com/show/)[0-9]+");
+        Matcher m = p.matcher(url);
+        if (m.find()) {
+            id = m.group();
+        }
+        // Intenta obtener el id desde el contenido de la página
+        else {
+            String text = JSONHelper.getText(url);
+            if (text != null) {
+                p = Pattern.compile("(?<=show_id=)[0-9]+");
+                m = p.matcher(text);
+                if (m.find()) {
+                    id = m.group();
+                }
+            }
+        }
+        if (id == null) {
+            return null;
         }
         try {
-            return Integer.parseInt(text);
+            return Integer.parseInt(id);
         } catch (Exception e) {return null;}
     }
 
-*/
+
 }

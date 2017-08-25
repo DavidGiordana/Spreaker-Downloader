@@ -19,10 +19,13 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import org.davidgiordana.SpreakerDownloader.Data.Downloader.DownloadManager;
 import org.davidgiordana.SpreakerDownloader.Data.JSONHelper;
+import org.davidgiordana.SpreakerDownloader.Data.SpreakerData.SpreakerPodcastFactory;
 import org.davidgiordana.SpreakerDownloader.GUI.SpreakerDownloader.SpreakerDownloaderController;
 import org.davidgiordana.SpreakerDownloader.Main;
 
 import java.io.File;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
 /**
@@ -30,8 +33,10 @@ import java.io.File;
  *
  * @author davidgiordana
  */
-public class InitViewController {
+public class InitViewController implements Initializable {
 
+    /** ID de show de spraker */
+    private Integer showID = null;
 
     @FXML
     /** Layout principal */
@@ -84,7 +89,7 @@ public class InitViewController {
      * @return true si el ide es válido
      */
     private boolean checkSpreakerID() {
-        Integer showID = getShowID();
+        showID = SpreakerPodcastFactory.getSpreakerShowID(showField.getText());
         if (showID == null || showID < 1) { return false; }
         return JSONHelper.getJSON("https://api.spreaker.com/v2/shows/" + showID) != null;
     }
@@ -102,7 +107,7 @@ public class InitViewController {
      * Comprueba la información ingresada
      */
     private void checkInformation() {
-        statusLabel.setText("Comprobando datos...");
+        statusLabel.setText("Comprobando datos, esto podría tardar unos segundos...");
         statusLabel.setTextFill(Color.BLACK);
         new Thread() {
             @Override
@@ -133,31 +138,13 @@ public class InitViewController {
     private void goToMainWindow() {
         try {
             Stage stage = getStage();
-            SpreakerDownloaderController.showID = getShowID();
+            SpreakerDownloaderController.showID = this.showID;
             DownloadManager.getInstance().setDestination(destinationField.getText());
             Parent root = FXMLLoader.load(getClass().getResource("/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderMain.fxml"));
             stage.setTitle(Main.title);
             stage.setScene(new Scene(root, 600, 500));
             stage.show();
         } catch (Exception e ){e.printStackTrace();}
-    }
-
-    /**
-     * Obtiene el id del show
-     * @return ID del show, null si no es válido
-     */
-    private Integer getShowID(){
-        String text = showField.getText();
-        if (text == null) { return null; }
-        String f1 = "http://www.spreaker.com/show/";
-        String f2 = "/episodes/feed";
-        if (text.startsWith(f1) && text.endsWith(f2)) {
-            text = text.replaceFirst(f1, "");
-            text = text.replaceFirst(f2, "");
-        }
-        try {
-            return Integer.parseInt(text);
-        } catch (Exception e) {return null;}
     }
 
     /**
@@ -191,6 +178,10 @@ public class InitViewController {
         });
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }
 
 
