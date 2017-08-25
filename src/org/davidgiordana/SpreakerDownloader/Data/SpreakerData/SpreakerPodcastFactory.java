@@ -129,11 +129,18 @@ public class SpreakerPodcastFactory {
      * @return Show ID de Spreaker, null si no es posible obtener el dato
      */
     public static Integer getSpreakerShowID(String text) {
-        // Elimina caso base
-        if (text == null || text.isEmpty()) {
+        // Elimina casos inútiles
+        if (text == null) {
             return null;
         }
         text = text.trim();
+        if (text.isEmpty()) {
+            return null;
+        }
+        // Completa la url si es necesario
+        if (!text.startsWith("https://")) {
+            text = "https://" + text;
+        }
         // Intenta obtener el id directamente del texto
         try {
             Integer id = Integer.parseInt(text);

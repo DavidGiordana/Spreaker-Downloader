@@ -1,16 +1,26 @@
 package org.davidgiordana.SpreakerDownloader.GUI.SpreakerDownloader;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import org.davidgiordana.SpreakerDownloader.Data.Downloader.DownloadManager;
 import org.davidgiordana.SpreakerDownloader.Data.SpreakerData.SpreakerEpisode;
 import org.davidgiordana.SpreakerDownloader.Data.SpreakerData.SpreakerPodcast;
 import org.davidgiordana.SpreakerDownloader.Data.SpreakerData.SpreakerPodcastFactory;
+import org.davidgiordana.SpreakerDownloader.GUI.SettingsView.SettingsViewController;
+import org.davidgiordana.SpreakerDownloader.Main;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,6 +31,13 @@ import java.util.ResourceBundle;
  * @author davidgiodana
  */
 public class SpreakerDownloaderController implements Initializable{
+
+    /** Stack principal de vistas */
+    public StackPane mainStack;
+
+    /** */
+    public VBox spreakerDownloaderView;
+
 
     // MARK: - Podcast label
 
@@ -74,7 +91,7 @@ public class SpreakerDownloaderController implements Initializable{
     // MARK: - Data
 
     /** Identificador de Show actual */
-    public static int showID;
+    public IntegerProperty showID;
 
     /** Modelo de la tabla */
     private SimpleObjectProperty<SpreakerPodcast> podcastModel;
@@ -87,6 +104,17 @@ public class SpreakerDownloaderController implements Initializable{
         prepareData();
         prepareDownloadModule();
         prepareSearchTF();
+
+        this.showID = new SimpleIntegerProperty(0);
+        this.showID.addListener((obs, o, n) -> {
+            if (n != null) {
+                this.requestPodcast();
+
+            }
+            spreakerDownloaderView.setDisable(false);
+            mainStack.getChildren().remove(pane);
+        });
+        this.showSettingsVC();
     }
 
     /**
@@ -118,7 +146,6 @@ public class SpreakerDownloaderController implements Initializable{
                 episodesTable.setItems(n.getFilteredEpisodesList());
             }
         });
-        requestPodcast();
     }
 
     /**
@@ -126,7 +153,7 @@ public class SpreakerDownloaderController implements Initializable{
      */
     private void requestPodcast() {
         podcastLabel.setText("Cargando...");
-        SpreakerPodcastFactory.setPodcast(showID, podcastModel);
+        SpreakerPodcastFactory.setPodcast(showID.getValue(), podcastModel);
     }
 
     /**
@@ -271,6 +298,32 @@ public class SpreakerDownloaderController implements Initializable{
         searchTF.setText(null);
     }
 
+    // MARK: - Settings
+
+    private SettingsViewController settingsController;
+    private VBox pane;
+
+    private void showSettingsVC() {
+
+        URL settingsFXML = Main.class.getResource("/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.fxml");
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            Pane p = fxmlLoader.load(settingsFXML.openStream());
+            settingsController = (SettingsViewController) fxmlLoader.getController();
+            settingsController.setShowIDProperty(showID);
+
+            pane = new VBox();
+            pane.getChildren().add(p);
+
+
+            pane.setBackground(new Background(new BackgroundFill(Color.gray(0,0.7), CornerRadii.EMPTY, Insets.EMPTY)));
+            p.setBackground(new Background(new BackgroundFill(Color.gray(.9,1), CornerRadii.EMPTY, Insets.EMPTY)));
+            pane.setAlignment(Pos.CENTER);
+            mainStack.getChildren().add(pane);
+            spreakerDownloaderView.setDisable(true);
+        } catch (Exception e){e.printStackTrace();}
+
+    }
 
 }
 

@@ -1,10 +1,9 @@
-package org.davidgiordana.SpreakerDownloader.GUI.InitView;
+package org.davidgiordana.SpreakerDownloader.GUI.SettingsView;
 
 
 
 import javafx.application.Platform;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.IntegerProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -33,10 +32,15 @@ import java.util.ResourceBundle;
  *
  * @author davidgiordana
  */
-public class InitViewController implements Initializable {
+public class SettingsViewController implements Initializable {
 
     /** ID de show de spraker */
-    private Integer showID = null;
+    private Integer internalShowID;
+    private IntegerProperty showID = null;
+
+    public void setShowIDProperty(IntegerProperty showID) {
+        this.showID = showID;
+    }
 
     @FXML
     /** Layout principal */
@@ -89,9 +93,9 @@ public class InitViewController implements Initializable {
      * @return true si el ide es válido
      */
     private boolean checkSpreakerID() {
-        showID = SpreakerPodcastFactory.getSpreakerShowID(showField.getText());
-        if (showID == null || showID < 1) { return false; }
-        return JSONHelper.getJSON("https://api.spreaker.com/v2/shows/" + showID) != null;
+        internalShowID = SpreakerPodcastFactory.getSpreakerShowID(showField.getText());
+        if (internalShowID == null || internalShowID < 1) { return false; }
+        return JSONHelper.getJSON("https://api.spreaker.com/v2/shows/" + internalShowID) != null;
     }
 
     /**
@@ -121,10 +125,12 @@ public class InitViewController implements Initializable {
                     showErrorMessage("El directorio destino no es válido");
                     return;
                 }
+
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        goToMainWindow();
+                        DownloadManager.getInstance().setDestination(destinationField.getText());
+                        showID.setValue(internalShowID);
                     }
                 });
             }
@@ -132,20 +138,6 @@ public class InitViewController implements Initializable {
 
     }
 
-    /**
-     * Muesta la ventana principal
-     */
-    private void goToMainWindow() {
-        try {
-            Stage stage = getStage();
-            SpreakerDownloaderController.showID = this.showID;
-            DownloadManager.getInstance().setDestination(destinationField.getText());
-            Parent root = FXMLLoader.load(getClass().getResource("/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderMain.fxml"));
-            stage.setTitle(Main.title);
-            stage.setScene(new Scene(root, 600, 500));
-            stage.show();
-        } catch (Exception e ){e.printStackTrace();}
-    }
 
     /**
      * Solicita al usuario el directorio de destino al usuario

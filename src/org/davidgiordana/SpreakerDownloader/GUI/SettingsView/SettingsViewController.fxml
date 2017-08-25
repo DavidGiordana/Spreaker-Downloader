@@ -8,7 +8,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="mainLayout" maxHeight="175.0" minHeight="175.0" minWidth="570.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.davidgiordana.SpreakerDownloader.GUI.InitView.InitViewController">
+
+<VBox maxHeight="175.0" minHeight="175.0" minWidth="570.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.davidgiordana.SpreakerDownloader.GUI.SettingsView.SettingsViewController">
    <children>
       <HBox>
          <children>

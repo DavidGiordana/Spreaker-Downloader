@@ -90,7 +90,7 @@ public class DownloadTask extends Task<Void> {
      */
     private String getDestinationUrl(String name) {
         String dest = DownloadManager.getInstance().getDestination();
-        return dest + File.separator + name + FilenameUtils.EXTENSION_SEPARATOR_STR + ".mp3";
+        return dest + File.separator + name + FilenameUtils.EXTENSION_SEPARATOR + "mp3";
     }
 
     /**
