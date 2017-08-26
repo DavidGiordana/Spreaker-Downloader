@@ -7,16 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/CheckboxList/CheckboxList.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/CheckboxList/CheckboxListItem.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/InitView/InitViewController.fxml" afterPath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/InitView/InitViewController.java" afterPath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadTask.java" afterPath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcastFactory.java" afterPath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcastFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderController.java" afterPath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderMain.fxml" afterPath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderMain.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Main.java" afterPath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadManager.java" afterPath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.java" afterPath="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,8 +70,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="27" column="47" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="27" selection-end-column="47" />
+            <state relative-caret-position="0">
+              <caret line="27" column="47" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="27" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,7 +82,7 @@
       <file leaf-file-name="SpreakerDownloaderController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
+            <state relative-caret-position="3654">
               <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
               <folding>
                 <element signature="method#prepareTable#0;class#SpreakerDownloaderController#0" expanded="false" />
@@ -109,25 +102,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingsViewController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SettingsViewController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-347">
-              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+            <state relative-caret-position="151">
+              <caret line="131" column="93" lean-forward="false" selection-start-line="131" selection-start-column="93" selection-end-line="131" selection-end-column="93" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DownloadManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="176" column="10" lean-forward="false" selection-start-line="176" selection-start-column="10" selection-end-line="176" selection-end-column="10" />
               <folding>
-                <element signature="e#1331#1332#0" expanded="true" />
-                <element signature="e#1367#1368#0" expanded="true" />
+                <element signature="e#3695#3696#0" expanded="true" />
+                <element signature="e#3729#3730#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpreakerPodcastFactory.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SpreakerPodcastFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcastFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="141" column="36" lean-forward="false" selection-start-line="141" selection-start-column="36" selection-end-line="141" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="290">
+              <caret line="142" column="9" lean-forward="false" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
+              <folding>
+                <element signature="e#2139#2156#0" expanded="true" />
+                <element signature="e#3860#3877#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,7 +141,7 @@
       <file leaf-file-name="FXMLLoader.java" pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
+            <state relative-caret-position="60610">
               <caret line="2234" column="17" lean-forward="false" selection-start-line="2234" selection-start-column="17" selection-end-line="2234" selection-end-column="17" />
               <folding>
                 <element signature="e#83880#83881#0" expanded="true" />
@@ -207,8 +213,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/test.java" />
-        <option value="$PROJECT_DIR$/src/org/davidgiordana/Data/Downloader/SpreakerEpisode.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/Data/SpreakerPodcast.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/Data/Main.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/sample/Main.java" />
@@ -239,7 +243,6 @@
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/Main/SpreakerDownloaderMain.fxml" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadItem.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/LimitedBandwidthInputStream.java" />
-        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadManager.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/CheckboxList/CheckboxListItem.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/CheckboxList/CheckboxList.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/PodcastsModel.java" />
@@ -255,9 +258,12 @@
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.fxml" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderMain.fxml" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderController.java" />
-        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadTask.java" />
         <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcastFactory.java" />
+        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/DataChecker.java" />
+        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/DataVerifier.java" />
+        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadManager.java" />
+        <option value="$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.java" />
       </list>
     </option>
   </component>
@@ -545,9 +551,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -597,7 +602,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="SpreakerDownloader" type="462c0819:PsiDirectoryNode" />
               <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="SpreakerData" type="462c0819:PsiDirectoryNode" />
+              <item name="Downloader" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SpreakerDownloader" type="b2602c69:ProjectViewProjectNode" />
@@ -626,7 +631,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -944,7 +950,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3278272" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3278272" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1028,7 +1034,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ImagesLoadProgress.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/src.zip!/javax/swing/filechooser/FileSystemView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-697">
@@ -1196,20 +1201,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/CheckboxList/CheckboxListItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
-          <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/CheckboxList/CheckboxList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-688">
-          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/CheckboxList/CheckboxListItem.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/CheckboxList/CheckboxList.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/cell/CheckBoxListCell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
@@ -1243,7 +1236,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
           <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1251,9 +1243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1261,16 +1250,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="72" column="71" lean-forward="false" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
-          <folding>
-            <element signature="e#1572#1573#0" expanded="true" />
-            <element signature="e#1665#1666#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
+        <state relative-caret-position="60610">
           <caret line="2234" column="17" lean-forward="false" selection-start-line="2234" selection-start-column="17" selection-end-line="2234" selection-end-column="17" />
           <folding>
             <element signature="e#83880#83881#0" expanded="true" />
@@ -1283,7 +1268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2970">
           <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1291,25 +1275,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="205" column="61" lean-forward="false" selection-start-line="205" selection-start-column="47" selection-end-line="205" selection-end-column="61" />
-          <folding>
-            <element signature="e#8334#8335#0" expanded="false" />
-            <element signature="e#8367#8368#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="24" column="121" lean-forward="false" selection-start-line="24" selection-start-column="117" selection-end-line="24" selection-end-column="121" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderMain.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderMain.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
@@ -1318,14 +1301,11 @@
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="27" column="47" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="27" selection-end-column="47" />
+        <state relative-caret-position="0">
+          <caret line="27" column="47" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="27" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1336,27 +1316,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="e#2940#2941#0" expanded="true" />
-            <element signature="e#2990#2991#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-373">
-          <caret line="126" column="18" lean-forward="false" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
-          <folding>
-            <element signature="e#3674#3675#0" expanded="true" />
-            <element signature="e#3708#3709#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SpreakerDownloader/SpreakerDownloaderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
+        <state relative-caret-position="3654">
           <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
           <folding>
             <element signature="method#prepareTable#0;class#SpreakerDownloaderController#0" expanded="false" />
@@ -1375,21 +1340,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcastFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-347">
-          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+        <state relative-caret-position="290">
+          <caret line="142" column="9" lean-forward="false" selection-start-line="142" selection-start-column="9" selection-end-line="142" selection-end-column="9" />
           <folding>
-            <element signature="e#1331#1332#0" expanded="true" />
-            <element signature="e#1367#1368#0" expanded="true" />
+            <element signature="e#2139#2156#0" expanded="true" />
+            <element signature="e#3860#3877#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/SpreakerData/SpreakerPodcastFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/DataVerifier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="141" column="36" lean-forward="false" selection-start-line="141" selection-start-column="36" selection-end-line="141" selection-end-column="36" />
+        <state relative-caret-position="116">
+          <caret line="4" column="59" lean-forward="false" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/Data/Downloader/DownloadManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="176" column="10" lean-forward="false" selection-start-line="176" selection-start-column="10" selection-end-line="176" selection-end-column="10" />
+          <folding>
+            <element signature="e#3695#3696#0" expanded="true" />
+            <element signature="e#3729#3730#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/davidgiordana/SpreakerDownloader/GUI/SettingsView/SettingsViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="131" column="93" lean-forward="false" selection-start-line="131" selection-start-column="93" selection-end-line="131" selection-end-column="93" />
           <folding />
         </state>
       </provider>

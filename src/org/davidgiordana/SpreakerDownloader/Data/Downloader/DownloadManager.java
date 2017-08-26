@@ -3,6 +3,7 @@ package org.davidgiordana.SpreakerDownloader.Data.Downloader;
 import javafx.beans.property.*;
 import org.davidgiordana.SpreakerDownloader.Data.SpreakerData.SpreakerEpisode;
 
+import java.io.File;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -162,5 +163,28 @@ public class DownloadManager {
 
     public IntegerProperty bandWidthProperty() {
         return bandWidth;
+    }
+
+    /**
+     * STATIC - verifier
+     */
+
+    /**
+     * Comprueba el directorio de destino
+     * @return null si el directorio de destino es válido
+     *          Un String con el error si ha habido un problema
+     */
+    public static String checkDestinationFolder(String destination) {
+        if (destination == null || destination.isEmpty()) {
+            return "No se ha ingresado un directorio de destino";
+        }
+        File destinationFile = new File(destination);
+        if (!destinationFile.isDirectory()) {
+            return "La ruta de destino no es un directorio";
+        }
+        if (!destinationFile.canWrite()) {
+            return "El directorio de destino no puede ser escrito";
+        }
+        return null;
     }
 }

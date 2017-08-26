@@ -99,12 +99,12 @@ public class SettingsViewController implements Initializable {
     }
 
     /**
-     * Comprueba el directorio de destino
-     * @return true si el directorio de destino es válido
+     * Retorna el directorio de destino en forma de un string
+     * @return String de la ruta de retorno del directorio de destino
      */
-    private boolean checkDestinationFolder() {
-        if (destinationField.getText() == null) {return false;}
-        return new File(destinationField.getText()).isDirectory();
+    private String getDestinationFolderString() {
+        String text = destinationField.getText();
+        return text == null ? null : text.trim();
     }
 
     /**
@@ -116,26 +116,24 @@ public class SettingsViewController implements Initializable {
         new Thread() {
             @Override
             public void run() {
-                super.run();
+                // Comprueba la validez del directorio de destino
+                String destinationError = DownloadManager.checkDestinationFolder(getDestinationFolderString());
+                if (destinationError != null) {
+                    showErrorMessage(destinationError);
+                    return;
+                }
+                // Comprueba la validez del id del show
                 if (!checkSpreakerID()) {
                     showErrorMessage("No se ha ingresado el id de show de Spreaker o no es válido");
                     return;
                 }
-                if (!checkDestinationFolder()) {
-                    showErrorMessage("El directorio destino no es válido");
-                    return;
-                }
-
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        DownloadManager.getInstance().setDestination(destinationField.getText());
-                        showID.setValue(internalShowID);
-                    }
+                // Continua la ejecución en caso de ser los datos válidos
+                Platform.runLater(() -> {
+                    DownloadManager.getInstance().setDestination(getDestinationFolderString());
+                    showID.setValue(internalShowID);
                 });
             }
         }.start();
-
     }
 
 
