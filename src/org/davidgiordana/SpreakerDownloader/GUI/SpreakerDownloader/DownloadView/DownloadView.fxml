@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.davidgiordana.SpreakerDownloader.GUI.SpreakerDownloader.DownloadView.DownloadViewController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+         <children>
+            <Label text="Descargando:" />
+            <Label fx:id="downloadingItem" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" VBox.vgrow="NEVER">
+         <children>
+            <ProgressBar fx:id="progress" maxWidth="1.7976931348623157E308" prefHeight="20.0" progress="0.0" HBox.hgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+         <children>
+            <Label text="Descargas restantes:" />
+            <Label fx:id="remaning" />
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField fx:id="bandwidthField" onAction="#changeBandwidth" prefHeight="27.0" prefWidth="137.0" promptText="Máxima velocidad" />
+            <Label text="KB/s" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

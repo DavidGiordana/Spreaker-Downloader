@@ -2,7 +2,6 @@ package org.davidgiordana.SpreakerDownloader.Data.SpreakerData;
 
 import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ObservableObjectValue;
 import org.davidgiordana.SpreakerDownloader.Data.JSONHelper;
 import org.json.JSONArray;
 import org.json.JSONException;

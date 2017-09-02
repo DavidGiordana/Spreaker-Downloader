@@ -23,9 +23,6 @@ public class SpreakerPodcast {
     private StringProperty showName;                    // Nombre del show
     private ObservableList<SpreakerEpisode> episodes;   // Lista de episodios
 
-    // Lista de episodios filtrados
-    private FilteredList<SpreakerEpisode> filteredEpisodesList;
-
     /**
      * Constructor
      * @param showID id de show de Spreaker
@@ -38,7 +35,6 @@ public class SpreakerPodcast {
         this.userName = new SimpleStringProperty(userName);
         this.showName = new SimpleStringProperty(showName);
         this.episodes = FXCollections.observableArrayList();
-        this.filteredEpisodesList = new FilteredList(this.episodes, p -> true);
         setEpisodes(episodes);
     }
 
@@ -50,23 +46,6 @@ public class SpreakerPodcast {
     public void setEpisodes(ArrayList<SpreakerEpisode> episodes) {
         ArrayList<SpreakerEpisode> eps = episodes == null ? new ArrayList() : episodes;
         this.episodes.setAll(eps);
-    }
-
-    // MARK: - buscador
-
-    /**
-     * Filtra la lista pública en base a un String
-     * @param searchData String base para realizar la búsqueda
-     */
-    public void search(final String searchData) {
-        filteredEpisodesList.setPredicate(spreakerEpisode -> {
-            if (searchData == null || searchData.isEmpty()) {
-                return true;
-            }
-            String lowerCaseMatch = searchData.toLowerCase();
-            String lowerCaseData = spreakerEpisode.getTitle().toLowerCase();
-            return lowerCaseData.contains(lowerCaseMatch);
-        });
     }
 
     /**
@@ -101,7 +80,4 @@ public class SpreakerPodcast {
         return episodes;
     }
 
-    public FilteredList<SpreakerEpisode> getFilteredEpisodesList() {
-        return filteredEpisodesList;
-    }
 }

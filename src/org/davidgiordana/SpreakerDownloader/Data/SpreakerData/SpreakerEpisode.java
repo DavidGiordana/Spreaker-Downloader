@@ -1,7 +1,7 @@
 package org.davidgiordana.SpreakerDownloader.Data.SpreakerData;
 
-import javafx.beans.property.*;
 
+import javafx.beans.property.*;
 
 /**
  * Objeto con la información de un episodio
