@@ -28,14 +28,38 @@ public class DownloadTask extends Task<Void> {
     /** Nombre temporal generado para la descarga */
     private String tempName;
 
+    /** Cantidad de bytes a saltear */
+    private long seek;
+
     /**
-     * Constructor
+     * Constructor de la clase
+     * @param downloadItem DownloadItem con la información para la descarga
+     * @param tempName Nombre temporal del archivo de descarga
+     * @param seek bytes a saltear en la descarga
+     */
+    public DownloadTask(DownloadItem downloadItem, String tempName, long seek) {
+        this.downloadItem = downloadItem;
+        this.tempName = tempName;
+        this.seek = seek;
+    }
+
+    /**
+     * Constructor de la clase
+     * @param downloadItem DownloadItem con la información para la descarga
+     * @param tempName Nombre temporal del archivo de descarga
+     */
+    public DownloadTask(DownloadItem downloadItem, String tempName) {
+        this(downloadItem, tempName, 0);
+    }
+
+    /**
+     * Constructor de la clase
      * @param di DownloadItem con la información para la descarga
      */
-    DownloadTask(DownloadItem di) {
-        this.downloadItem = di;
-        this.tempName = new Date().getTime() + "";
+    public DownloadTask(DownloadItem di) {
+        this(di,new Date().getTime() + "");
     }
+
 
     @Override
     protected Void call() throws Exception {
@@ -50,6 +74,7 @@ public class DownloadTask extends Task<Void> {
         try {
             inputsream = connection.getInputStream();
             is = new LimitedBandwidthInputStream(inputsream, dm.getBandWidth());
+            is.skip(seek);
             is.bandwidthProperty().bind(dm.bandWidthProperty());
             os = Files.newOutputStream(Paths.get(this.getTempName()));
 

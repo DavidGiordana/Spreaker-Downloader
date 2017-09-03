@@ -1,11 +1,12 @@
 package org.davidgiordana.SpreakerDownloader.Data.Downloader;
 
 import javafx.beans.property.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.davidgiordana.SpreakerDownloader.Data.SpreakerData.SpreakerEpisode;
 
 import java.io.File;
 import java.util.List;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Administrador de descargas
@@ -42,7 +43,7 @@ public class DownloadManager {
     private String destination;
 
     /** Cola con los elementos a descargar */
-    private ConcurrentLinkedQueue<DownloadItem> queue;
+    private ObservableList<DownloadItem> queue;
 
     /** Propiedades */
     private DoubleProperty currentProgress;             // Progreso de la descarga actual
@@ -56,7 +57,7 @@ public class DownloadManager {
      * Constructor
      */
     private DownloadManager(){
-        this.queue = new ConcurrentLinkedQueue<DownloadItem>();
+        this.queue = FXCollections.observableArrayList();
         this.currentProgress = new SimpleDoubleProperty();
         this.currentItem = new SimpleObjectProperty<SpreakerEpisode>();
         this.downloadCount = new SimpleIntegerProperty(0);
@@ -82,7 +83,7 @@ public class DownloadManager {
     public synchronized void addDownload(SpreakerEpisode episode) {
         if (episode == null) { return; }
         boolean wasEmpty = queue.isEmpty();
-        queue.offer(new DownloadItem(episode));
+        queue.add(new DownloadItem(episode));
         if (wasEmpty) {
             startNewTask(false);
         }
@@ -96,12 +97,12 @@ public class DownloadManager {
      */
     public synchronized void startNewTask(boolean removing) {
         if (removing) {
-            queue.poll();
+            queue.remove(queue.size() - 1);
         }
         // Actualiza las propiedades
         this.downloadCount.setValue(queue.size());
         currentProgress.setValue(0);
-        DownloadItem di = queue.peek();
+        DownloadItem di = queue.get(0);
         if (di != null) {
             // Creación de nueva tarea
             downloadTask = new DownloadTask(di);
@@ -163,6 +164,10 @@ public class DownloadManager {
 
     public IntegerProperty bandWidthProperty() {
         return bandWidth;
+    }
+
+    public ObservableList<DownloadItem> getQueue() {
+        return queue;
     }
 
     /**

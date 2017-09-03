@@ -3,6 +3,7 @@ package org.davidgiordana.SpreakerDownloader.GUI.SpreakerDownloader;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +16,7 @@ import javafx.scene.control.cell.CheckBoxTableCell;
 
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import org.davidgiordana.SpreakerDownloader.Data.Downloader.DownloadItem;
 import org.davidgiordana.SpreakerDownloader.Data.Downloader.DownloadManager;
 import org.davidgiordana.SpreakerDownloader.Data.SpreakerData.SpreakerEpisode;
 import org.davidgiordana.SpreakerDownloader.Data.SpreakerData.SpreakerPodcast;
@@ -36,7 +38,9 @@ public class SpreakerDownloaderController implements Initializable {
     /** Objeto tabla de episodios */
     private SearchableTable<SpreakerEpisode> episodeSearchableTable;
 
-    public DownloadViewController downloadViewController;
+    /** Objeto tabla de descargas */
+    private SearchableTable<DownloadItem> downloadSearchableTable;
+
 
     // MARK: - Panels
 
@@ -58,20 +62,27 @@ public class SpreakerDownloaderController implements Initializable {
     public Label podcastName;
 
 
-    // MARK: -  Search
+    // MARK: -  Episodes list
 
     /** Text Field de búsqueda */
-    public TextField searchTF;
+    public TextField searchEpisodeTF;
 
     /** Boton de cancelar de búsqueda */
-    public Button searchCancelB;
+    public Button cancelSearchEpisodesB;
 
-
-    // MARK: - Table
-
-    @FXML
     /** Vista de tabla con los elementos descargables */
     public TableView<SpreakerEpisode> episodesTable;
+
+    // MARK: -  Download list
+
+    /** Text Field de búsqueda */
+    public TextField searchDownloadTF;
+
+    /** Boton de cancelar de búsqueda */
+    public Button cancelSearchDownloadB;
+
+    /** Vista de tabla con los elementos descargables */
+    public TableView<DownloadItem> downloadTable;
 
     // MARK: - Data
 
@@ -85,7 +96,8 @@ public class SpreakerDownloaderController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        prepareTable();
+        prepareEpisodesTable();
+        prepareDownloadsTable();
         prepareData();
 
         this.showID = new SimpleIntegerProperty(0);
@@ -103,9 +115,9 @@ public class SpreakerDownloaderController implements Initializable {
     /**
      * Prepara la tabla de episodios
      */
-    private void prepareTable() {
+    private void prepareEpisodesTable() {
         // Prepara el objeto de tabla con búsqueda
-        episodeSearchableTable = new SearchableTable<SpreakerEpisode>(episodesTable,searchTF,searchCancelB);
+        episodeSearchableTable = new SearchableTable<SpreakerEpisode>(episodesTable,searchEpisodeTF,cancelSearchEpisodesB);
         episodeSearchableTable.setSearchCallback(SpreakerEpisode::getTitle);
         episodeSearchableTable.setSelectionCallback(SpreakerEpisode::selectedProperty);
 
@@ -116,6 +128,25 @@ public class SpreakerDownloaderController implements Initializable {
 
         // Configura los anchos
         titleColumn.prefWidthProperty().bind(episodesTable.widthProperty().multiply(0.9));
+    }
+
+    /**
+     * Prepara la tabla de descargas
+     */
+    private void prepareDownloadsTable() {
+        // Prepara el objeto de tabla con búsqueda
+        downloadSearchableTable = new SearchableTable<DownloadItem>(downloadTable, searchDownloadTF, cancelSearchDownloadB);
+        downloadSearchableTable.setSearchCallback(c -> c.getEpisode().getTitle());
+        downloadSearchableTable.setSelectionCallback(DownloadItem::selectedProperty);
+        DownloadManager dm = DownloadManager.getInstance();
+        downloadSearchableTable.setBaseData(dm.getQueue());
+
+        // Columna de títulos
+        TableColumn<DownloadItem, String> titleColumn = new TableColumn("Título");
+        titleColumn.setCellValueFactory(c -> {return c.getValue().getEpisode().titleProperty();});
+        downloadTable.getColumns().add(titleColumn);
+
+
     }
 
     /**
